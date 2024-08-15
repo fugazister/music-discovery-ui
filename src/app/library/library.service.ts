@@ -1,0 +1,17 @@
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LibraryService {
+	private http = inject(HttpClient);
+
+	populateAlbumsBySpotify() {
+		return this.http.post('http://localhost:3000/library/spotify/albums', {});
+	}
+
+	populateAlbumsByBandcamp() {
+		return this.http.post('http://localhost:3000/library/bandcamp/albums', {});
+	}
+}

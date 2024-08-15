@@ -1,1 +1,12 @@
-<p>bandcamp works!</p>
+<div class="app-bandcamp">
+	<button mat-button (click)="getUserLibrary()">Get user library</button>
+	<div *ngFor="let album of albums()">
+		<mat-card class="album-card" appearance="outlined">
+			<mat-card-header>
+				<mat-card-title>Album: {{ album.name }} Artist: {{ album.raw.band_name }}</mat-card-title>
+			</mat-card-header>
+			<img src="{{ album.raw.item_art_url }}" mat-card-md-image>
+			<mat-card-footer></mat-card-footer>
+		</mat-card>
+	</div>
+</div>

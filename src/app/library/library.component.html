@@ -1,13 +1,6 @@
 <div class="app-library">
 	<div class="container">
-		<div *ngFor="let album of albums()">
-			<mat-card class="album-card" appearance="outlined">
-				<mat-card-header>
-					<mat-card-title>Album: {{ album.name }} Artist: {{ album.raw.artists[0].name }}</mat-card-title>
-				</mat-card-header>
-				<img src="{{ album.raw.images[0].url }}" mat-card-md-image>
-				<mat-card-footer></mat-card-footer>
-			</mat-card>
-		</div>
+		<button mat-button (click)="populateAlbumsBySpotify()">populate albums by spotify</button>
+		<button mat-button (click)="populateAlbumsByBandcamp()">populate albums by bandcamp</button>
 	</div>
 </div>
