@@ -1,13 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { LibraryService } from './library.service';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-library',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule, MatTableModule],
   templateUrl: './library.component.html',
   styleUrl: './library.component.scss'
 })
@@ -17,7 +17,9 @@ export class LibraryComponent implements OnInit {
 	albums = signal([]);
 
 	ngOnInit(): void {
-
+		this.libraryService.getAlbums().subscribe((response: any) => {
+			this.albums.set(response);
+		});
 	}
 
 	populateAlbumsBySpotify() {

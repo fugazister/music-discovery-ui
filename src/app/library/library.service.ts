@@ -14,4 +14,8 @@ export class LibraryService {
 	populateAlbumsByBandcamp() {
 		return this.http.post('http://localhost:3000/library/bandcamp/albums', {});
 	}
+
+	getAlbums() {
+		return this.http.get('http://localhost:3000/library/albums');
+	}
 }
