@@ -26,7 +26,6 @@ export class SpotifyComponent {
 
 	getLikedAlbums() {
 		return this.spotifyService.getUserAlbums().subscribe((result: any) => {
-			console.log('result', result);
 			this.albums.set(result);
 		});
 	}
