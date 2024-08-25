@@ -27,4 +27,8 @@ export class BandcampComponent implements OnInit {
 	getUserLibrary() {
 		this.bandcampService.populateLibrary('fugazister').subscribe();
 	}
+
+	getAlbum(albumId: string) {
+		this.bandcampService.getAlbum(albumId).subscribe();
+	}
 }

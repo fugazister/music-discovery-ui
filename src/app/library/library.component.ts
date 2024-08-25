@@ -13,6 +13,7 @@ import { MatTableModule } from '@angular/material/table';
 })
 export class LibraryComponent implements OnInit {
 	private libraryService = inject(LibraryService);
+	displayedColumns = ['name', 'service'];
 
 	albums = signal([]);
 
@@ -22,11 +23,11 @@ export class LibraryComponent implements OnInit {
 		});
 	}
 
-	populateAlbumsBySpotify() {
-		this.libraryService.populateAlbumsBySpotify().subscribe();
+	hasSpotifyAlbum(item: any) {
+		return item.spotifyAlbum;
 	}
 
-	populateAlbumsByBandcamp() {
-		this.libraryService.populateAlbumsByBandcamp().subscribe();
+	hasBandcampAlbum(item: any) {
+		return item.bandcampAlbum;
 	}
 }

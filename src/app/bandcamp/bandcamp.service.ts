@@ -14,4 +14,8 @@ export class BandcampService {
 	getLibrary() {
 		return this.http.get('http://localhost:3000/bandcamp/albums');
 	}
+
+	getAlbum(albumId: string) {
+		return this.http.get(`http://localhost:3000/bandcamp/albums/${albumId}`);
+	}
 }
